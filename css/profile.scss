@@ -1,0 +1,69 @@
+@charset "utf-8";
+@import url(./reset.css);
+@import './fragment/var';
+
+#wrap {
+	> header {
+		> h1.logo {
+			// position: absolute;
+			// left: 0;
+			// top: 0;
+			// padding: 20vh 10vw;
+			// width: 100%;
+			// height: 100%;
+			// background-color: #fff;
+			// animation: h1 2s linear 8s forwards;
+			outline: 1px solid red;
+			> svg {
+				#fullSig {
+					> path {
+						fill: transparent;
+						animation: logo 2s forwards linear;
+					}
+					> #AlphabetD {
+						stroke-dasharray: 229px;
+						stroke-dashoffset: 229px;
+					}
+					> #AlphabetO {
+						stroke-dasharray: 143px;
+						stroke-dashoffset: 143px;
+						animation-delay: 2s;
+					}
+					> #AlphabetN {
+						stroke-dasharray: 167px;
+						stroke-dashoffset: 167px;
+						animation-delay: 4s;
+					}
+					> #AlphabetN2 {
+						stroke-dasharray: 167px;
+						stroke-dashoffset: 167px;
+					}
+					> #AlphabetA {
+						stroke-dasharray: 166px;
+						stroke-dashoffset: 166px;
+						animation-delay: 4s;
+					}
+					> #Alphabeteye {
+						stroke-dasharray: 82px;
+						stroke-dashoffset: 82px;
+						animation-delay: 2s;
+					}
+					> #Alphabetmouth {
+						stroke-dasharray: 147px;
+						stroke-dashoffset: 147px;
+					}
+				} //end of #fullSig
+				#shadow {
+					opacity: 0;
+					animation: shadow 1s forwards 6s;
+				} //end of #shadow
+			} //end of svg
+		} //end of .logo
+		> h2 {
+		}
+	} //end of header
+	> section {
+	} //end of section
+	> footer {
+	} //end of footer
+} //end of #wrap

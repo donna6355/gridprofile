@@ -1,0 +1,21 @@
+@import url(./reset.css);
+@keyframes logo { 70% { stroke-dashoffset: 0; fill: transparent; }
+  80% { stroke-dashoffset: 0; fill: #1a1818; }
+  90% { stroke-dashoffset: 0; fill: transparent; }
+  to { transform: rotate(0deg); stroke-dashoffset: 0; fill: #1a1818; } }
+@keyframes shadow { 30% { opacity: 0.5; }
+  60% { opacity: 0.1; }
+  to { opacity: 0.3; } }
+@keyframes h1 { to { left: 80px; top: 40px; width: 10vw; height: auto; padding: 0; } }
+#wrap > header > h1.logo { outline: 1px solid red; }
+#wrap > header > h1.logo > svg #fullSig > path { fill: transparent; animation: logo 2s forwards linear; }
+#wrap > header > h1.logo > svg #fullSig > #AlphabetD { stroke-dasharray: 229px; stroke-dashoffset: 229px; }
+#wrap > header > h1.logo > svg #fullSig > #AlphabetO { stroke-dasharray: 143px; stroke-dashoffset: 143px; animation-delay: 2s; }
+#wrap > header > h1.logo > svg #fullSig > #AlphabetN { stroke-dasharray: 167px; stroke-dashoffset: 167px; animation-delay: 4s; }
+#wrap > header > h1.logo > svg #fullSig > #AlphabetN2 { stroke-dasharray: 167px; stroke-dashoffset: 167px; }
+#wrap > header > h1.logo > svg #fullSig > #AlphabetA { stroke-dasharray: 166px; stroke-dashoffset: 166px; animation-delay: 4s; }
+#wrap > header > h1.logo > svg #fullSig > #Alphabeteye { stroke-dasharray: 82px; stroke-dashoffset: 82px; animation-delay: 2s; }
+#wrap > header > h1.logo > svg #fullSig > #Alphabetmouth { stroke-dasharray: 147px; stroke-dashoffset: 147px; }
+#wrap > header > h1.logo > svg #shadow { opacity: 0; animation: shadow 1s forwards 6s; }
+
+/*# sourceMappingURL=profile.css.map */

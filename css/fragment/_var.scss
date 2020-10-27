@@ -1,0 +1,51 @@
+@keyframes logo {
+	70% {
+		stroke-dashoffset: 0;
+		fill: transparent;
+	}
+	80% {
+		stroke-dashoffset: 0;
+		fill: #1a1818;
+	}
+	90% {
+		stroke-dashoffset: 0;
+		fill: transparent;
+	}
+	to {
+		transform: rotate(0deg);
+		stroke-dashoffset: 0;
+		fill: #1a1818;
+	}
+}
+@keyframes shadow {
+	30% {
+		opacity: 0.5;
+	}
+	60% {
+		opacity: 0.1;
+	}
+	to {
+		opacity: 0.3;
+	}
+}
+@keyframes h1 {
+	to {
+		left: 80px;
+		top: 40px;
+		width: 10vw;
+		height: auto;
+		padding: 0;
+	}
+}
+@mixin fullPg {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+}
+@mixin flexCenter {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
