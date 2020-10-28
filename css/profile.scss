@@ -136,8 +136,10 @@
 						text-align: center;
 						background-color: #fff;
 						&.tit {
-							background-color: #000;
+							background-color: $skyCol;
+							opacity: 0.8;
 							color: #fff;
+							filter: grayscale(60%); // keyframes to grayscale(0%);
 							> h2 {
 								height: 30vh;
 								font-size: 2rem;
@@ -149,7 +151,7 @@
 								color: #fff;
 								font-size: 1.2rem;
 								line-height: 2rem;
-								filter: blur(30px);
+								filter: blur(15px); // keyframes to blur(0px);
 								&:last-child {
 									margin-top: 16vh;
 									opacity: 0.4;
@@ -214,6 +216,82 @@
 			> article.who {
 				grid-column: 8/12;
 				grid-row: 1/4;
+				> ul {
+					overflow: hidden;
+					position: relative;
+					height: 100%;
+					> li {
+						position: absolute;
+						left: 0;
+						top: 150%;
+						width: 100%;
+						height: 100%;
+						outline: 1px solid red;
+						&.tit {
+							color: #fff;
+							text-align: center;
+							background-color: $blueCol;
+							filter: grayscale(60%); // keyframes to grayscale(0%);
+							> h2 {
+								height: 10vh;
+								font-size: 2rem;
+								text-indent: 0;
+								line-height: 10vh;
+								background: none;
+							}
+							> p {
+								color: #fff;
+								font-size: 1.2rem;
+								line-height: 2rem;
+								filter: blur(15px); // keyframes to blur(0px);
+								&:last-child {
+									margin-top: 6vh;
+									opacity: 0.4;
+									font-size: 0.8rem;
+								}
+							}
+						}
+						// end of .tit
+						&:nth-child(2) {
+							padding: 2vw;
+							box-sizing: border-box;
+							background-image: url(../img/profile_who_career1.png),
+								url(../img/profile_who_career2.png);
+							background-position: left top, right bottom;
+							background-repeat: no-repeat;
+							> h2 {
+								margin-bottom: 1.5vh;
+								&:first-child {
+									text-align: right;
+								}
+							}
+							> p {
+								margin-bottom: 1.5vh;
+								font-size: 1rem;
+								line-height: 1.4rem;
+								word-break: keep-all;
+								&:first-of-type {
+									text-align: right;
+									margin-bottom: 5.5vh;
+								}
+								> a {
+									display: inline-block;
+									width: 1.4rem;
+									height: 1.4rem;
+									@include irSet();
+									background-image: url(../img/profile_who_newtab.svg);
+								}
+							}
+						}
+						// end of .2th child
+						&:nth-child(2n) {
+							top: -150%;
+						}
+						&.on {
+							top: 0;
+						}
+					}
+				}
 			}
 			// end of .who
 			> article.done {
