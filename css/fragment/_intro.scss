@@ -1,0 +1,88 @@
+@keyframes logo {
+	70% {
+		stroke-dashoffset: 0;
+		fill: transparent;
+	}
+	80% {
+		stroke-dashoffset: 0;
+		fill: #1a1818;
+	}
+	90% {
+		stroke-dashoffset: 0;
+		fill: transparent;
+	}
+	to {
+		transform: rotate(0deg);
+		stroke-dashoffset: 0;
+		fill: #1a1818;
+	}
+}
+@keyframes shadow {
+	30% {
+		opacity: 0.5;
+	}
+	60% {
+		opacity: 0.1;
+	}
+	75% {
+		opacity: 0.4;
+	}
+	90% {
+		opacity: 0.2;
+	}
+	to {
+		opacity: 0.3;
+	}
+}
+
+.intro {
+	display: none; //js hide needed
+	@include fullPg();
+	z-index: 1000;
+	background-color: #fff;
+	svg {
+		margin: 40vh 30vw;
+		#fullSig {
+			> path {
+				fill: transparent;
+				animation: logo 2s forwards linear;
+			}
+			> #AlphabetD {
+				stroke-dasharray: 229px;
+				stroke-dashoffset: 229px;
+			}
+			> #AlphabetO {
+				stroke-dasharray: 143px;
+				stroke-dashoffset: 143px;
+				animation-delay: 2s;
+			}
+			> #AlphabetN {
+				stroke-dasharray: 167px;
+				stroke-dashoffset: 167px;
+				animation-delay: 4s;
+			}
+			> #AlphabetN2 {
+				stroke-dasharray: 167px;
+				stroke-dashoffset: 167px;
+			}
+			> #AlphabetA {
+				stroke-dasharray: 166px;
+				stroke-dashoffset: 166px;
+				animation-delay: 4s;
+			}
+			> #Alphabeteye {
+				stroke-dasharray: 82px;
+				stroke-dashoffset: 82px;
+				animation-delay: 2s;
+			}
+			> #Alphabetmouth {
+				stroke-dasharray: 147px;
+				stroke-dashoffset: 147px;
+			}
+		} //end of #fullSig
+		#shadow {
+			opacity: 0;
+			animation: shadow 1s forwards 6s;
+		} //end of #shadow
+	} //end of svg
+}

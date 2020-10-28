@@ -1,33 +1,7 @@
-@keyframes logo {
-	70% {
-		stroke-dashoffset: 0;
-		fill: transparent;
-	}
-	80% {
-		stroke-dashoffset: 0;
-		fill: #1a1818;
-	}
-	90% {
-		stroke-dashoffset: 0;
-		fill: transparent;
-	}
-	to {
-		transform: rotate(0deg);
-		stroke-dashoffset: 0;
-		fill: #1a1818;
-	}
-}
-@keyframes shadow {
-	30% {
-		opacity: 0.5;
-	}
-	60% {
-		opacity: 0.1;
-	}
-	to {
-		opacity: 0.3;
-	}
-}
+$skyCol: #6cabd5;
+$blueCol: #244893;
+$purpleCol: #71488a;
+
 @keyframes h1 {
 	to {
 		left: 80px;
@@ -35,6 +9,11 @@
 		width: 10vw;
 		height: auto;
 		padding: 0;
+	}
+}
+@keyframes hue {
+	to {
+		filter: hue-rotate(360deg);
 	}
 }
 @mixin fullPg {
@@ -48,4 +27,18 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+@mixin irSet {
+	text-indent: -9999px;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+@mixin flex($row:row, $nowrap:nowrap) {
+	display: flex;
+	flex-flow: $row $nowrap;
+}
+@mixin btnReset {
+	outline: none;
+	border: none;
+	background: none;
 }
