@@ -14,15 +14,15 @@ $(function(){
   setTimeout(function(){
     $('.intro').fadeOut();
   }
-    ,6000);
+    ,5600);
     setTimeout(function(){
       $article.eq(0).addClass('turn');
-    },6200);
+    },6000);
     setTimeout(function(){
       $article.eq(1).addClass('turn');
-    },8000);
+    },7500);
     setTimeout(function(){
       $article.eq(2).addClass('turn');
-    },9800);
+    },9000);
 
 })

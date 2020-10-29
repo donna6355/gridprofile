@@ -37,10 +37,11 @@
 		> h2 {
 			font-weight: normal;
 			font-size: 1rem;
+			font-weight: 800;
 			margin: 0 1vw;
 			> span {
 				position: relative;
-				font-weight: 800;
+				font-weight: 900;
 				animation: hue 20s infinite alternate;
 				background: -webkit-linear-gradient(
 					0deg,
@@ -77,14 +78,17 @@
 						}
 					}
 					&:nth-child(1):hover > a,
+					&:nth-child(1):focus > a,
 					&:nth-child(1).on > a {
 						color: $skyCol;
 					}
 					&:nth-child(2):hover > a,
+					&:nth-child(2):focus > a,
 					&:nth-child(2).on > a {
 						color: $blueCol;
 					}
 					&:nth-child(3):hover > a,
+					&:nth-child(3):focus > a,
 					&:nth-child(3).on > a {
 						color: $purpleCol;
 					}
@@ -113,7 +117,40 @@
 			grid-template-rows: repeat(6, 1fr);
 			grid-gap: 1.5vw;
 			> button {
+				position: relative;
 				@include btnReset();
+				z-index: 1;
+				overflow: hidden;
+				background-color: #999;
+				font-weight: 700;
+				color: #fff;
+				transition: all 0.6s;
+				&:after {
+					display: block;
+					position: absolute;
+					left: 0;
+					top: 0;
+					z-index: -1;
+					width: 100%;
+					height: 100%;
+					border-radius: 50%;
+					background-color: $skyCol;
+					transform: scale(0);
+					content: "";
+					transition: all 0.4s;
+				}
+				&:hover,
+				&:focus {
+					border-radius: 50%;
+					&:after {
+						transform: scale(2);
+					}
+				}
+			}
+			> article {
+				outline: 5px solid blue;
+				// outline-offset: 1px;
+				// box-sizing: border-box;
 			}
 			> article.do {
 				grid-column: 1/7;
@@ -147,7 +184,7 @@
 							> p {
 								color: #fff;
 								font-weight: 800;
-								font-size: 1.2rem;
+								font-size: 1.4rem;
 								line-height: 2rem;
 								filter: blur(18px);
 								&:last-child {
@@ -163,9 +200,27 @@
 						> h2 {
 							width: 172px;
 							height: 40px;
-							margin: 2vh auto;
+							margin: 0.5vh auto;
 							text-align: center;
 							@include irSet();
+						}
+						&:nth-child(2) > h2 {
+							background-image: url(../img/profile_whatdo_thumb1.png);
+						}
+						&:nth-child(3) > h2 {
+							background-image: url(../img/profile_whatdo_thumb2.png);
+						}
+						&:nth-child(4) > h2 {
+							background-image: url(../img/profile_whatdo_thumb3.png);
+						}
+						&:nth-child(5) > h2 {
+							background-image: url(../img/profile_whatdo_thumb5.png);
+						}
+						&:nth-child(6) > h2 {
+							background-image: url(../img/profile_whatdo_thumb6.png);
+						}
+						&:nth-child(7) > h2 {
+							background-image: url(../img/profile_whatdo_thumb7.png);
 						}
 						> h3 {
 							font-size: 1.2rem;
@@ -183,10 +238,10 @@
 						}
 						> img {
 							display: block;
-							margin: 2vh auto;
+							margin: 1vh auto;
 						}
 						.btn {
-							margin: 1.5vh auto;
+							margin: 1vh auto;
 							> a {
 								display: inline-block;
 								margin: 0 0.2vw;
@@ -251,58 +306,10 @@
 						}
 						// end of .tit
 						&:nth-child(2) {
-							background-image: url(../img/profile_who_career1.png),
-								url(../img/profile_who_career2.png);
-							background-position: left top, right bottom;
-							background-repeat: no-repeat;
-							> h2 {
-								margin-bottom: 1.5vh;
-								&:first-child {
-									text-align: right;
-								}
-							}
-							> p {
-								margin-bottom: 1.5vh;
-								font-size: 1rem;
-								line-height: 1.4rem;
-								word-break: keep-all;
-								&:first-of-type {
-									text-align: right;
-									margin-bottom: 5.5vh;
-								}
-								> a {
-									display: inline-block;
-									width: 1.4rem;
-									height: 1.4rem;
-									@include irSet();
-									background-image: url(../img/profile_who_newtab.svg);
-								}
-							}
-						}
-						// end of .2th child career
-						&:nth-child(3) {
-							background-image: url(../img/profile_who_adjective.png);
-							background-repeat: no-repeat;
-							background-size: cover;
-							background-position: center;
-							> h3 {
-								color: $blueCol;
-								margin: 3vh 0 1.5vh;
-								font-size: 1rem;
-							}
-							> p {
-								font-size: 1rem;
-								font-weight: 600;
-								text-align: right;
-							}
-						}
-						// end of 3rd-child/adjective
-						&:nth-child(4) {
 							div {
 								display: flex;
 								justify-content: space-around;
 								width: 100%;
-								margin-top: 1vh;
 								> p {
 									width: 80px;
 									height: 80px;
@@ -383,7 +390,54 @@
 								}
 							}
 						}
-						// end of 4th-child / ability
+						// end of 2nd-child / ability
+						&:nth-child(3) {
+							background-image: url(../img/profile_who_career1.png),
+								url(../img/profile_who_career2.png);
+							background-position: left top, right bottom;
+							background-repeat: no-repeat;
+							> h2 {
+								margin-bottom: 1.5vh;
+								&:first-child {
+									text-align: right;
+								}
+							}
+							> p {
+								margin-bottom: 1.5vh;
+								font-size: 1rem;
+								line-height: 1.4rem;
+								word-break: keep-all;
+								&:first-of-type {
+									text-align: right;
+									margin-bottom: 5.5vh;
+								}
+								> a {
+									display: inline-block;
+									width: 1.4rem;
+									height: 1.4rem;
+									@include irSet();
+									background-image: url(../img/profile_who_newtab.svg);
+								}
+							}
+						}
+						// end of .3rd child career
+						&:nth-child(4) {
+							background-image: url(../img/profile_who_adjective.png);
+							background-repeat: no-repeat;
+							background-size: cover;
+							background-position: center;
+							> h3 {
+								color: $blueCol;
+								margin: 3vh 0 1.5vh;
+								font-size: 1rem;
+							}
+							> p {
+								font-size: 1rem;
+								font-weight: 600;
+								text-align: right;
+							}
+						}
+						// end of 4th-child/adjective
 						&:nth-child(2n) {
 							top: -150%;
 						}
@@ -399,15 +453,15 @@
 					width: 100%;
 					height: 100%;
 					> li {
-						display: none;
 						position: absolute;
 						width: 100%;
 						height: 100%;
 						left: 0;
 						top: 0;
 						background-color: #fff;
-						outline: 1px solid orange;
 						transform: scale(0);
+						padding: 2vh 1vw;
+						box-sizing: border-box;
 						&.tit {
 							display: block;
 							background-color: $purpleCol;
@@ -434,6 +488,105 @@
 								}
 							}
 						}
+						&:nth-child(2) {
+							position: relative;
+							overflow: hidden;
+							> ol {
+								position: absolute;
+								&.main {
+									left: 0%;
+									top: 15%;
+									width: 400%;
+									height: 80%;
+									> li {
+										float: left;
+										width: 25%;
+										height: 100%;
+										@include irSet();
+										&:nth-child(1) {
+											background-image: url(../img/profile_whatdone_plan1.svg);
+										}
+										&:nth-child(2) {
+											background-image: url(../img/profile_whatdone_plan2.svg);
+										}
+										&:nth-child(3) {
+											background-image: url(../img/profile_whatdone_plan3.svg);
+										}
+										&:nth-child(4) {
+											background-image: url(../img/profile_whatdone_plan4.svg);
+										}
+									}
+								}
+							}
+							> .pagination {
+								left: calc(50% - 2.5vw);
+								bottom: 1vh;
+								z-index: 10;
+								width: 5vw;
+								> li {
+									float: left;
+									width: 0.6vw;
+									height: 0.6vw;
+									margin-right: 0.3vw;
+									border-radius: 50%;
+									@include irSet();
+									background: #999;
+									&:last-child {
+										margin-right: 0;
+									}
+									> a {
+										display: block;
+									}
+									&.on,
+									&:hover {
+										background-color: #313131;
+									}
+								}
+							}
+							> .btn {
+								display: flex;
+								width: 90%;
+								justify-content: space-between;
+								position: absolute;
+								left: 5%;
+								top: calc(50% - 1vh);
+								z-index: 10;
+								> a {
+									display: block;
+									width: 0px;
+									height: 0px;
+									text-indent: -9999px;
+									border: 1.5vh solid #999;
+									&:hover {
+										border-color: #313131;
+									}
+									&:nth-child(1) {
+										border-top-color: transparent;
+										border-bottom-color: transparent;
+										border-left-color: transparent;
+									}
+									&:nth-child(2) {
+										border-top-color: transparent;
+										border-bottom-color: transparent;
+										border-right-color: transparent;
+									}
+								}
+							}
+						}
+						// end of 2nd child // event planner
+						&:nth-child(3) {
+							> h3 {
+								margin: 3vh 0;
+								text-align: center;
+							}
+							> iframe {
+								width: 100%;
+							}
+						}
+						// end of 3rd child // eng dubbing
+						&:nth-child(4) {
+						}
+						// end of 4th child //travel
 					}
 				}
 			}
@@ -473,26 +626,44 @@
 			.item9 {
 				grid-column: 9/10;
 				grid-row: 4/5;
+				&:after {
+					background-color: $purpleCol;
+				}
 			}
 			.item10 {
 				grid-column: 9/10;
 				grid-row: 5/6;
+				&:after {
+					background-color: $purpleCol;
+				}
 			}
 			.item11 {
 				grid-column: 9/10;
 				grid-row: 6/7;
+				&:after {
+					background-color: $purpleCol;
+				}
 			}
 			.item12 {
 				grid-column: 12/13;
 				grid-row: 1/2;
+				&:after {
+					background-color: $blueCol;
+				}
 			}
 			.item13 {
 				grid-column: 12/13;
 				grid-row: 2/3;
+				&:after {
+					background-color: $blueCol;
+				}
 			}
-			.item13 {
+			.item14 {
 				grid-column: 12/13;
 				grid-row: 3/4;
+				&:after {
+					background-color: $blueCol;
+				}
 			}
 		}
 		// article animation
