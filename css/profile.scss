@@ -115,22 +115,19 @@
 			> button {
 				@include btnReset();
 			}
-			> .grid-item {
-				outline: 3px solid gray;
-			} // will be removed soon!
 			> article.do {
 				grid-column: 1/7;
 				grid-row: 1/7;
 				overflow: hidden;
 				box-sizing: border-box;
 				> ul {
-					height: 100%;
 					position: relative;
 					overflow: hidden;
+					height: 100%;
 					> li {
 						position: absolute;
 						top: 0;
-						right: -120%;
+						left: 120%;
 						width: 100%;
 						height: 100%;
 						text-align: center;
@@ -139,7 +136,7 @@
 							background-color: $skyCol;
 							opacity: 0.8;
 							color: #fff;
-							filter: grayscale(60%); // keyframes to grayscale(0%);
+							filter: grayscale(70%);
 							> h2 {
 								height: 30vh;
 								font-size: 2rem;
@@ -149,9 +146,10 @@
 							}
 							> p {
 								color: #fff;
+								font-weight: 800;
 								font-size: 1.2rem;
 								line-height: 2rem;
-								filter: blur(15px); // keyframes to blur(0px);
+								filter: blur(18px);
 								&:last-child {
 									margin-top: 16vh;
 									opacity: 0.4;
@@ -161,9 +159,6 @@
 						}
 						&:nth-child(2n) {
 							left: -120%;
-						}
-						&.on {
-							left: 0;
 						}
 						> h2 {
 							width: 172px;
@@ -226,14 +221,16 @@
 						top: 150%;
 						width: 100%;
 						height: 100%;
-						outline: 1px solid red;
+						padding: 2vh 2vw;
+						box-sizing: border-box;
+						background-color: #fff;
 						&.tit {
 							color: #fff;
 							text-align: center;
 							background-color: $blueCol;
-							filter: grayscale(60%); // keyframes to grayscale(0%);
+							filter: grayscale(70%);
 							> h2 {
-								height: 10vh;
+								height: 12vh;
 								font-size: 2rem;
 								text-indent: 0;
 								line-height: 10vh;
@@ -241,11 +238,12 @@
 							}
 							> p {
 								color: #fff;
+								font-weight: 800;
 								font-size: 1.2rem;
 								line-height: 2rem;
-								filter: blur(15px); // keyframes to blur(0px);
+								filter: blur(18px);
 								&:last-child {
-									margin-top: 6vh;
+									margin-top: 4vh;
 									opacity: 0.4;
 									font-size: 0.8rem;
 								}
@@ -253,8 +251,6 @@
 						}
 						// end of .tit
 						&:nth-child(2) {
-							padding: 2vw;
-							box-sizing: border-box;
 							background-image: url(../img/profile_who_career1.png),
 								url(../img/profile_who_career2.png);
 							background-position: left top, right bottom;
@@ -283,12 +279,113 @@
 								}
 							}
 						}
-						// end of .2th child
+						// end of .2th child career
+						&:nth-child(3) {
+							background-image: url(../img/profile_who_adjective.png);
+							background-repeat: no-repeat;
+							background-size: cover;
+							background-position: center;
+							> h3 {
+								color: $blueCol;
+								margin: 3vh 0 1.5vh;
+								font-size: 1rem;
+							}
+							> p {
+								font-size: 1rem;
+								font-weight: 600;
+								text-align: right;
+							}
+						}
+						// end of 3rd-child/adjective
+						&:nth-child(4) {
+							div {
+								display: flex;
+								justify-content: space-around;
+								width: 100%;
+								margin-top: 1vh;
+								> p {
+									width: 80px;
+									height: 80px;
+									position: relative;
+									> span {
+										position: absolute;
+										left: 0;
+										top: 0;
+										display: block;
+										width: 90%;
+										height: 90%;
+										padding: 5%;
+										@include irSet();
+									}
+									&.sk1 > span {
+										background-image: url(../img/profile_who_sk1.png);
+									}
+									&.sk2 > span {
+										background-image: url(../img/profile_who_sk2.png);
+										& + svg {
+											animation-delay: 0.2s;
+										}
+									}
+									&.sk3 > span {
+										background-image: url(../img/profile_who_sk3.png);
+										& + svg {
+											animation-delay: 0.4s;
+										}
+									}
+									&.sk4 > span {
+										background-image: url(../img/profile_who_sk4.png);
+										& + svg {
+											animation-delay: 0.6s;
+										}
+									}
+									&.sk5 > span {
+										background-image: url(../img/profile_who_sk5.png);
+										& + svg {
+											animation-delay: 0.8s;
+										}
+									}
+									&.sk6 > span {
+										background-image: url(../img/profile_who_sk6.png);
+										& + svg {
+											animation-delay: 1s;
+										}
+									}
+									&.sk7 > span {
+										background-image: url(../img/profile_who_sk7.png);
+										& + svg {
+											animation-delay: 1.2s;
+										}
+									}
+									&.sk8 > span {
+										background-image: url(../img/profile_who_sk8.png);
+										& + svg {
+											animation-delay: 1.4s;
+										}
+									}
+									> svg {
+										position: absolute;
+										left: 0;
+										top: 0;
+										width: 100%;
+										height: 110%;
+										fill: transparent;
+										transform-origin: center;
+										opacity: 0;
+										> text {
+											font-weight: 600;
+											font-size: 1.2rem;
+											fill: #000;
+										}
+										&.on {
+											animation: coding 1s forwards;
+										}
+									}
+								}
+							}
+						}
+						// end of 4th-child / ability
 						&:nth-child(2n) {
 							top: -150%;
-						}
-						&.on {
-							top: 0;
 						}
 					}
 				}
@@ -297,6 +394,48 @@
 			> article.done {
 				grid-column: 10/13;
 				grid-row: 4/7;
+				> ul {
+					position: relative;
+					width: 100%;
+					height: 100%;
+					> li {
+						display: none;
+						position: absolute;
+						width: 100%;
+						height: 100%;
+						left: 0;
+						top: 0;
+						background-color: #fff;
+						outline: 1px solid orange;
+						transform: scale(0);
+						&.tit {
+							display: block;
+							background-color: $purpleCol;
+							filter: grayscale(70%);
+							text-align: center;
+							> h2 {
+								height: 12vh;
+								font-size: 2rem;
+								text-indent: 0;
+								line-height: 10vh;
+								background: none;
+								color: #fff;
+							}
+							> p {
+								color: #fff;
+								font-weight: 800;
+								font-size: 1.2rem;
+								line-height: 2rem;
+								filter: blur(18px);
+								&:last-child {
+									margin-top: 6vh;
+									opacity: 0.4;
+									font-size: 0.8rem;
+								}
+							}
+						}
+					}
+				}
 			}
 			// end of .done
 			.item1 {
@@ -356,6 +495,38 @@
 				grid-row: 3/4;
 			}
 		}
+		// article animation
+		> .grid-container > article > ul > li {
+			// .on will be for normal list
+			&.on {
+				animation: toLeftTop 1s forwards ease-in;
+			} // .turn will be for tit
+			&.turn {
+				animation: turnon 2s forwards ease-in-out;
+				> h2 {
+					animation: bigger 1s forwards 1s;
+				}
+				> p {
+					animation: blur 1s forwards;
+					&:nth-of-type(1) {
+						animation-delay: 1.6s;
+					}
+					&:nth-of-type(2) {
+						animation-delay: 2s;
+					}
+					&:nth-of-type(3) {
+						animation-delay: 2.4s;
+					}
+					&:nth-of-type(4) {
+						animation-delay: 2.8s;
+					}
+					&:last-child {
+						animation: float 0.5s infinite alternate linear 3.6s;
+					}
+				}
+			}
+		}
+		// end of .turn article animation
 	}
 	// end of section
 	> footer {

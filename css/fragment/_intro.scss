@@ -36,7 +36,6 @@
 }
 
 .intro {
-	display: none; //js hide needed
 	@include fullPg();
 	z-index: 1000;
 	background-color: #fff;
@@ -45,7 +44,7 @@
 		#fullSig {
 			> path {
 				fill: transparent;
-				animation: logo 2s forwards linear;
+				animation: logo 1.5s forwards linear;
 			}
 			> #AlphabetD {
 				stroke-dasharray: 229px;
@@ -54,12 +53,12 @@
 			> #AlphabetO {
 				stroke-dasharray: 143px;
 				stroke-dashoffset: 143px;
-				animation-delay: 2s;
+				animation-delay: 1.5s;
 			}
 			> #AlphabetN {
 				stroke-dasharray: 167px;
 				stroke-dashoffset: 167px;
-				animation-delay: 4s;
+				animation-delay: 3s;
 			}
 			> #AlphabetN2 {
 				stroke-dasharray: 167px;
@@ -68,12 +67,12 @@
 			> #AlphabetA {
 				stroke-dasharray: 166px;
 				stroke-dashoffset: 166px;
-				animation-delay: 4s;
+				animation-delay: 1.5s;
 			}
 			> #Alphabeteye {
 				stroke-dasharray: 82px;
 				stroke-dashoffset: 82px;
-				animation-delay: 2s;
+				animation-delay: 3s;
 			}
 			> #Alphabetmouth {
 				stroke-dasharray: 147px;
@@ -82,7 +81,7 @@
 		} //end of #fullSig
 		#shadow {
 			opacity: 0;
-			animation: shadow 1s forwards 6s;
+			animation: shadow 1s forwards 4.5s;
 		} //end of #shadow
 	} //end of svg
 }
