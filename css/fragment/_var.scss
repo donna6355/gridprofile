@@ -84,7 +84,24 @@ $purpleCol: #71488a;
 		transform: rotate(250deg);
 	}
 }
-
+// done travel photo animation
+@keyframes photo {
+	0%,
+	10% {
+		transform: scaleY(0);
+		// filter: grayscale(100%);
+	}
+	25%,
+	75% {
+		transform: scaleY(1);
+		// filter: grayscale(0%);
+	}
+	90%,
+	100% {
+		transform: scaleY(0);
+		// filter: grayscale(100%);
+	}
+}
 @mixin fullPg {
 	position: fixed;
 	left: 0;

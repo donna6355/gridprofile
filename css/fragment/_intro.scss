@@ -36,7 +36,6 @@
 }
 
 .intro {
-	display: none; //remove when the page is done
 	@include fullPg();
 	z-index: 1000;
 	background-color: #fff;
