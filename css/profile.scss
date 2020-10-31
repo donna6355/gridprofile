@@ -108,7 +108,7 @@
 		width: 100%;
 		background-image: url(../img/profile_main_bb1.png);
 		background-repeat: no-repeat;
-		background-position: 66% 328px;
+		background-position: 65% 90%;
 		> .grid-container {
 			display: grid;
 			height: calc(93vh - 6vw);
@@ -139,6 +139,7 @@
 					content: "";
 					transition: all 0.4s;
 				}
+				&.on,
 				&:hover,
 				&:focus {
 					border-radius: 50%;
@@ -147,17 +148,19 @@
 					}
 				}
 			}
-			> article {
-				outline: 5px solid blue;
-				&.off {
-					filter: grayscale(60%);
-				} // outline-offset: 1px; // box-sizing: border-box;
+			> article.on {
+				animation: frame 1s linear alternate infinite;
+			}
+			> article.off {
+				animation: off 1s linear forwards;
 			}
 			> article.do {
 				grid-column: 1/7;
 				grid-row: 1/7;
 				overflow: hidden;
 				box-sizing: border-box;
+				outline: 0px solid $skyCol;
+				// box-sizing: border-box;
 				> ul {
 					position: relative;
 					overflow: hidden;
@@ -190,7 +193,6 @@
 								filter: blur(18px);
 								&:last-child {
 									margin-top: 16vh;
-									opacity: 0.4;
 									font-size: 0.8rem;
 								}
 							}
@@ -201,7 +203,7 @@
 						> h2 {
 							width: 172px;
 							height: 40px;
-							margin: 0.5vh auto;
+							margin: 1.5vh auto;
 							text-align: center;
 							@include irSet();
 						}
@@ -267,6 +269,7 @@
 			> article.who {
 				grid-column: 8/12;
 				grid-row: 1/4;
+				outline: 0px solid $blueCol; // box-sizing: border-box;
 				> ul {
 					overflow: hidden;
 					position: relative;
@@ -300,7 +303,6 @@
 								filter: blur(18px);
 								&:last-child {
 									margin-top: 4vh;
-									opacity: 0.4;
 									font-size: 0.8rem;
 								}
 							}
@@ -314,6 +316,7 @@
 								> p {
 									width: 80px;
 									height: 80px;
+									margin-top: -0.5vh;
 									position: relative;
 									> span {
 										position: absolute;
@@ -399,12 +402,14 @@
 							background-repeat: no-repeat;
 							> h2 {
 								margin-bottom: 1.5vh;
+								font-size: 1.2rem;
 								&:first-child {
 									text-align: right;
 								}
 							}
 							> p {
 								margin-bottom: 1.5vh;
+								font-weight: 700;
 								font-size: 1rem;
 								line-height: 1.4rem;
 								word-break: keep-all;
@@ -429,8 +434,8 @@
 							background-position: center;
 							> h3 {
 								color: $blueCol;
-								margin: 3vh 0 1.5vh;
-								font-size: 1rem;
+								margin: 2vh 0 1vh;
+								font-size: 1.5rem;
 							}
 							> p {
 								font-size: 1rem;
@@ -449,6 +454,7 @@
 			> article.done {
 				grid-column: 10/13;
 				grid-row: 4/7;
+				outline: 0px solid $purpleCol; // box-sizing: border-box;
 				> ul {
 					position: relative;
 					width: 100%;
@@ -483,8 +489,7 @@
 								line-height: 2rem;
 								filter: blur(18px);
 								&:last-child {
-									margin-top: 6vh;
-									opacity: 0.4;
+									margin-top: 4vh;
 									font-size: 0.8rem;
 								}
 							}
@@ -562,15 +567,15 @@
 									&:hover {
 										border-color: #313131;
 									}
-									&:nth-child(1) {
-										border-top-color: transparent;
-										border-bottom-color: transparent;
-										border-left-color: transparent;
-									}
-									&:nth-child(2) {
+									&.next {
 										border-top-color: transparent;
 										border-bottom-color: transparent;
 										border-right-color: transparent;
+									}
+									&.prev {
+										border-left-color: transparent;
+										border-top-color: transparent;
+										border-bottom-color: transparent;
 									}
 								}
 							}
@@ -592,13 +597,12 @@
 								> ol {
 									position: relative;
 									width: 100%;
-									height: 100%; // background-image: url(../img/profile_whatdone_trav2.png); JS
+									height: 100%;
+									background-image: url(../img/profile_whatdone_trav1.png); // JS
 									background-repeat: no-repeat;
 									background-size: cover;
 									background-position: center;
-									&.on {
-										animation: photo 3s infinite linear;
-									}
+									animation: photo 3s infinite linear;
 									> li {
 										display: none;
 									}
@@ -702,6 +706,9 @@
 			// .on will be for normal list
 			&.on {
 				animation: toLeftTop 1s forwards ease-in;
+			} // .turn will be for tit
+			&.off {
+				animation: toBackwards 1s forwards ease-in;
 			} // .turn will be for tit
 			&.turn {
 				animation: turnon 2s forwards ease-in-out;

@@ -42,7 +42,7 @@ $purpleCol: #71488a;
 		filter: blur(0px);
 	}
 }
-// article toLeftTop toLeft
+// article>li left/top/scale change
 @keyframes toLeftTop {
 	to {
 		left: 0;
@@ -50,9 +50,11 @@ $purpleCol: #71488a;
 		transform: scale(1);
 	}
 }
-@keyframes toLeft {
-	to {
+@keyframes toBackwards {
+	from {
 		left: 0;
+		top: 0;
+		transform: scale(1);
 	}
 }
 
@@ -66,6 +68,21 @@ $purpleCol: #71488a;
 		opacity: 0.2;
 		filter: blur(0px);
 		transform: translateY(0px);
+	}
+}
+// article off animation
+@keyframes off {
+	to {
+		filter: grayscale(90%);
+	}
+}
+// article frame animation
+@keyframes frame {
+	25% {
+		outline-width: 4px;
+	}
+	100% {
+		outline-width: 8px;
 	}
 }
 // .who career rotate animation
@@ -89,17 +106,14 @@ $purpleCol: #71488a;
 	0%,
 	10% {
 		transform: scaleY(0);
-		// filter: grayscale(100%);
 	}
 	25%,
 	75% {
 		transform: scaleY(1);
-		// filter: grayscale(0%);
 	}
 	90%,
 	100% {
 		transform: scaleY(0);
-		// filter: grayscale(100%);
 	}
 }
 @mixin fullPg {
