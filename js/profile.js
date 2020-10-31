@@ -17,6 +17,7 @@ $(function(){
   let blueberryIdx = 0;
   let travelIdx = 1;
   let careerIdx = 0;
+  let careerIntId = null;
 
   // function
   const careerSlide = function(){
@@ -64,11 +65,12 @@ $(function(){
     evt.preventDefault();
     $(this).parent().addClass('on').siblings().removeClass('on');
     $article.eq(idx).removeClass('off').addClass('on').siblings('article').addClass('off').removeClass('on');
+    $button.removeClass('on');
+    $('article>ul>li.on').removeClass('on').addClass('off');
   })
   // button click event
   // trigger the gnb event and show li with additional animation
   $button.on('click',function(){
-    $(this).addClass('on').siblings().removeClass('on');
     let btnIdx = $button.index(this);
     if(btnIdx === 0 ){
       // UIUX Renewal
@@ -113,36 +115,29 @@ $(function(){
     }else if(btnIdx === 12){
       // 경력/학력
       btnEvent(1,'who',2);      
-    }else if(btnIdx === 13){
+    }else{
       // 형용사
       btnEvent(1,'who',3);      
     }
+    $(this).addClass('on');
   })
 
-  // .done career slide -100% for each click
-  $('.done .btn>.prev').on('click',function(evt){
-    evt.preventDefault();
-    if(careerIdx < 1){
-      careerIdx = 3;
-    }else{
-      careerIdx --;
-    }
-    careerSlide();
-  })
-  $('.done .btn>.next').on('click',function(evt){
-    evt.preventDefault();
+  // .done career slide interval will be over upon pagination click
+  careerIntId = setInterval(function(){
     if(careerIdx > 2){
       careerIdx = 0;
     }else{
       careerIdx ++;
     }
     careerSlide();
-  })
+  },2000)
   $('.done .pagination > li > a').on('click',function(evt){
+    clearInterval(careerIntId);
     evt.preventDefault();
     careerIdx = $('.done .pagination > li > a').index(this);
     careerSlide()
   })
+
   // .done travel photo changing
   $('.done .frame > *').addClass('on');
   setInterval(function(){
