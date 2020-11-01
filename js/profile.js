@@ -29,6 +29,7 @@ $(function(){
     $gnb.eq(gnbEq).trigger('click');
     setTimeout(function(){
       $article.find('.on').removeClass('on').addClass('off');
+      $(`article.${className}>ul>li`).stop().animate({scrollTop:0})
       $(`article.${className}>ul>li`).eq(liIdx).removeClass('off').addClass('on');
       $('.who > ul > li svg').removeClass('on');
     },500)
@@ -39,6 +40,7 @@ $(function(){
     $('.intro').fadeOut();
   },5600);
   setTimeout(function(){
+    $('html,body').stop().animate({scrollTop:0});
     $articleTit.eq(0).addClass('turn');
   },6000);
   setTimeout(function(){
@@ -47,6 +49,18 @@ $(function(){
   setTimeout(function(){
     $articleTit.eq(2).addClass('turn');
   },9000);
+  $('.skip').on('click',function(evt){
+    evt.preventDefault();
+    $('.intro').stop().fadeOut();
+    $('html,body').stop().animate({scrollTop:0});
+      $articleTit.eq(0).addClass('turn');
+    setTimeout(function(){
+      $articleTit.eq(1).addClass('turn');
+    },1500);
+    setTimeout(function(){
+      $articleTit.eq(2).addClass('turn');
+    },3000);
+  })
 
   // article animation is done, then blueberry animation begins 
   setInterval(function(){
@@ -130,6 +144,20 @@ $(function(){
     $(this).addClass('on');
   })
 
+  // details fadein & close
+  $('.do>ul>li>.btn>a:nth-child(2)').on('click',function(evt){
+    evt.preventDefault();
+    let imgSrc = $(this).attr('href');
+    $('.details>.frame>img').scrollTop(0).attr({src:imgSrc});
+    $('.details>.frame').stop().animate({scrollTop:0});
+    $('.details').stop().fadeIn();
+  })
+  $('.details>.close').on('click',function(){
+    $(this).parents('.details').stop().fadeOut();
+  });
+
+
+
   // .done career slide interval will be over upon pagination click
   careerIntId = setInterval(function(){
     if(careerIdx > 2){
@@ -159,4 +187,11 @@ $(function(){
     $('.done .frame>.record').text(img.attr('alt'));
   },3000) 
 
+  // dodorecycle, 장보러 가는 날 a tag prevent
+  $('.do>ul>li:nth-child(4)>.btn>a').first().on('click',function(evt){
+    evt.preventDefault();
+  })
+  $('.do>ul>li:nth-child(5)>.btn>a').first().on('click',function(evt){
+    evt.preventDefault();
+  })
 })

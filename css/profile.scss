@@ -5,9 +5,14 @@
 
 #wrap {
 	font-family: Roboto;
+	color: #313131;
 	width: 90vw;
 	margin: 0 5vw;
 	position: relative;
+	@media #{$rwd700} {
+		width: 95vw;
+		margin: 0 2.5vw;
+	}
 	> header {
 		position: sticky;
 		left: 0;
@@ -50,6 +55,11 @@
 				top: 4px;
 				right: -8px;
 			}
+			@media #{$rwd700} {
+				font-size: 0.8rem;
+				line-height: 4vw;
+				position: initial;
+			}
 			> span {
 				position: relative;
 				font-weight: 900;
@@ -69,6 +79,9 @@
 			@media #{$rwd1100} {
 				align-self: flex-end;
 			}
+			@media #{$rwd700} {
+				display: none;
+			}
 			> ol {
 				float: right;
 				> li {
@@ -86,6 +99,7 @@
 						color: #313131;
 						@media screen and (max-width: 1280px) {
 							font-size: 1.4rem;
+							line-height: 1.4rem;
 						}
 					}
 					&:last-child {
@@ -133,6 +147,11 @@
 		@media #{$rwd1100} {
 			background-position: left bottom;
 		}
+		@media #{$rwd700} {
+			background-image: url(../img/profile_main_bb1.png)
+				url(../img/profile_bg_bottom.png);
+			background-position: 58vw 120vh;
+		}
 		> .grid-container {
 			display: grid;
 			height: calc(93vh - 6vw);
@@ -144,6 +163,12 @@
 				height: 160vh;
 				grid-template-columns: repeat(6, 1fr);
 				grid-template-rows: repeat(13, 1fr);
+			}
+			@media #{$rwd700} {
+				height: 200vh;
+				grid-template-columns: repeat(4, 1fr);
+				grid-template-rows: repeat(14, 1fr);
+				grid-gap: 1.5vh;
 			}
 			> button {
 				position: relative;
@@ -201,6 +226,10 @@
 					grid-column: 1/7;
 					grid-row: 1/7;
 				}
+				@media #{$rwd700} {
+					grid-column: 1/5;
+					grid-row: 1/5;
+				}
 				> ul {
 					position: relative;
 					overflow: hidden;
@@ -225,6 +254,11 @@
 								text-indent: 0;
 								line-height: 30vh;
 								background: none;
+								@media #{$rwd700} {
+									height: 20vh;
+									font-size: 1.6rem;
+									line-height: 20vh;
+								}
 							}
 							> p {
 								color: #fff;
@@ -232,9 +266,16 @@
 								font-size: 1.4rem;
 								line-height: 2rem;
 								filter: blur(18px);
+								@media #{$rwd700} {
+									font-size: 1rem;
+									line-height: 1.6rem;
+								}
 								&:last-child {
-									margin-top: 16vh;
+									margin-top: 14vh;
 									font-size: 0.8rem;
+									@media #{$rwd700} {
+										margin-top: 8vh;
+									}
 								}
 							}
 						}
@@ -244,11 +285,17 @@
 						> h2 {
 							width: 172px;
 							height: 40px;
-							margin: 1.5vh auto;
+							margin: 2.5vh auto;
 							text-align: center;
 							@include irSet();
 							@media #{$rwd1100} {
-								margin: 2vh auto;
+								margin: 1.5vw auto;
+							}
+							@media #{$rwd700} {
+								width: 40%;
+								background-size: contain;
+								height: 10%;
+								margin: 0.5vh auto;
 							}
 						}
 						&:nth-child(2) > h2 {
@@ -269,22 +316,40 @@
 						&:nth-child(7) > h2 {
 							background-image: url(../img/profile_whatdo_thumb7.png);
 						}
+						&:nth-child(8) > h2 {
+							background-image: url(../img/profile_whatdo_thumb8.png);
+						}
+						&:nth-child(9) > h2 {
+							background-image: url(../img/profile_whatdo_thumb4.png);
+						}
 						> h3 {
 							font-size: 1.2rem;
-							margin: 0.5vh 0;
+							margin: 2vh 0;
 							@media #{$rwd1100} {
-								margin: 1vh 0;
+								margin: 2vw 0;
+							}
+							@media #{$rwd700} {
+								font-size: 1rem;
+								margin: 0.2vh 0;
 							}
 						}
 						> h4 {
-							margin: 0.5vh 0;
+							margin: 1vh 0;
 							color: #000;
 							font-size: 1rem;
+							@media #{$rwd700} {
+								margin: .5vh 0;
+								font-size: .9rem;
+							}
 						}
 						> p {
 							color: #000;
 							font-size: 0.9rem;
 							line-height: 1.3rem;
+							@media #{$rwd700} {
+								font-size: .8rem;
+								line-height: 1rem;
+							}
 						}
 						> img {
 							display: block;
@@ -293,13 +358,17 @@
 							margin: 1vh auto;
 							image-rendering: pixelated;
 							@media #{$rwd1100} {
-								margin: 4vh auto;
+								margin: 4vw auto;
+							}
+							@media #{$rwd700} {
+								width: 80%;
+								margin: 0.5vh auto;
 							}
 						}
 						.btn {
 							margin: 1vh auto;
 							@media #{$rwd1100} {
-								margin: 1.5vh 0;
+								margin: 2vw 0;
 							}
 							> a {
 								display: inline-block;
@@ -312,6 +381,12 @@
 								line-height: 40px;
 								background-color: $skyCol;
 								border-radius: 20px;
+								@media #{$rwd700} {
+									width: 25%;
+									height: 23px;
+									font-size: 0.9rem;
+									line-height: 23px;
+								}
 								&:hover {
 									color: $blueCol;
 								}
@@ -329,6 +404,10 @@
 				@media #{$rwd1100} {
 					grid-column: 1/5;
 					grid-row: 8/11;
+				}
+				@media #{$rwd700} {
+					grid-column: 1/5;
+					grid-row: 7/10;
 				}
 				> ul {
 					overflow: hidden;
@@ -354,6 +433,9 @@
 								text-indent: 0;
 								line-height: 10vh;
 								background: none;
+								@media #{$rwd700} {
+									font-size: 1.6rem;
+								}
 							}
 							> p {
 								color: #fff;
@@ -361,6 +443,10 @@
 								font-size: 1.2rem;
 								line-height: 2rem;
 								filter: blur(18px);
+								@media #{$rwd700} {
+									font-size: 1rem;
+									line-height: 1.6rem;
+								}
 								&:last-child {
 									margin-top: 4vh;
 									font-size: 0.8rem;
@@ -474,6 +560,9 @@
 								font-size: 1rem;
 								line-height: 1.4rem;
 								word-break: keep-all;
+								@media #{$rwd700} {
+									font-size: 0.8rem;
+								}
 								&:first-of-type {
 									text-align: right;
 									margin-bottom: 5.5vh;
@@ -519,6 +608,33 @@
 				@media #{$rwd1100} {
 					grid-column: 4/7;
 					grid-row: 11/14;
+					&:after {
+						position: absolute;
+						right: 0;
+						bottom: 37vh;
+						display: block;
+						content: "";
+						width: 13vw;
+						height: 8vw;
+						@include irSet();
+						background-image: url(../img/profile_bg_side.png);
+						background-size: contain;
+					}
+				}
+				@media #{$rwd700} {
+					grid-column: 1/4;
+					grid-row: 11/14;
+					&:after {
+						position: absolute;
+						left: 0;
+						bottom: 0;
+						display: block;
+						content: "";
+						width: 233px;
+						height: 84px;
+						@include irSet();
+						background-image: url(../img/profile_bg_bottom.png);
+					}
 				}
 				> ul {
 					position: relative;
@@ -546,6 +662,9 @@
 								line-height: 10vh;
 								background: none;
 								color: #fff;
+								@media #{$rwd700} {
+									font-size: 1.4rem;
+								}
 							}
 							> p {
 								color: #fff;
@@ -553,6 +672,10 @@
 								font-size: 1.2rem;
 								line-height: 2rem;
 								filter: blur(18px);
+								@media #{$rwd700} {
+									font-size: 1rem;
+									line-height: 1.6rem;
+								}
 								&:last-child {
 									margin-top: 4vh;
 									font-size: 0.8rem;
@@ -563,6 +686,11 @@
 						&:nth-child(2) {
 							position: relative;
 							overflow: hidden;
+							@media #{$rwd700} {
+								> h2 {
+									font-size: .9rem;
+								}
+							}
 							> ol {
 								position: absolute;
 								&.main {
@@ -656,6 +784,11 @@
 						}
 						// end of 2nd child // event planner
 						&:nth-child(3) {
+							@media #{$rwd700} {
+								> h2 {
+									font-size: .9rem;
+								}
+							}
 							> h3 {
 								margin: 3vh 0;
 								text-align: center;
@@ -707,6 +840,10 @@
 					grid-column: 1/2;
 					grid-row: 7/8;
 				}
+				@media #{$rwd700} {
+					grid-column: 1/2;
+					grid-row: 5/6;
+				}
 			}
 			.item2 {
 				grid-column: 7/8;
@@ -714,6 +851,10 @@
 				@media #{$rwd1100} {
 					grid-column: 2/3;
 					grid-row: 7/8;
+				}
+				@media #{$rwd700} {
+					grid-column: 2/3;
+					grid-row: 5/6;
 				}
 			}
 			.item3 {
@@ -723,6 +864,10 @@
 					grid-column: 3/4;
 					grid-row: 7/8;
 				}
+				@media #{$rwd700} {
+					grid-column: 3/4;
+					grid-row: 5/6;
+				}
 			}
 			.item4 {
 				grid-column: 7/8;
@@ -730,6 +875,10 @@
 				@media #{$rwd1100} {
 					grid-column: 4/5;
 					grid-row: 7/8;
+				}
+				@media #{$rwd700} {
+					grid-column: 4/5;
+					grid-row: 5/6;
 				}
 			}
 			.item5 {
@@ -739,6 +888,10 @@
 					grid-column: 5/6;
 					grid-row: 7/8;
 				}
+				@media #{$rwd700} {
+					grid-column: 1/2;
+					grid-row: 6/7;
+				}
 			}
 			.item6 {
 				grid-column: 7/8;
@@ -746,6 +899,10 @@
 				@media #{$rwd1100} {
 					grid-column: 6/7;
 					grid-row: 7/8;
+				}
+				@media #{$rwd700} {
+					grid-column: 2/3;
+					grid-row: 6/7;
 				}
 			}
 			.item7 {
@@ -755,6 +912,10 @@
 					grid-column: 5/6;
 					grid-row: 8/9;
 				}
+				@media #{$rwd700} {
+					grid-column: 3/4;
+					grid-row: 6/7;
+				}
 			}
 			.item8 {
 				grid-column: 8/9;
@@ -763,6 +924,10 @@
 					grid-column: 6/7;
 					grid-row: 8/9;
 				}
+				@media #{$rwd700} {
+					grid-column: 4/5;
+					grid-row: 6/7;
+				}
 			}
 			.item9 {
 				grid-column: 9/10;
@@ -770,6 +935,10 @@
 				@media #{$rwd1100} {
 					grid-column: 2/3;
 					grid-row: 11/12;
+				}
+				@media #{$rwd700} {
+					grid-column: 4/5;
+					grid-row: 12/13;
 				}
 				&:after {
 					background-color: $purpleCol;
@@ -782,6 +951,10 @@
 					grid-column: 3/4;
 					grid-row: 11/12;
 				}
+				@media #{$rwd700} {
+					grid-column: 4/5;
+					grid-row: 13/14;
+				}
 				&:after {
 					background-color: $purpleCol;
 				}
@@ -792,6 +965,10 @@
 				@media #{$rwd1100} {
 					grid-column: 3/4;
 					grid-row: 12/13;
+				}
+				@media #{$rwd700} {
+					grid-column: 4/5;
+					grid-row: 14/15;
 				}
 				&:after {
 					background-color: $purpleCol;
@@ -804,6 +981,10 @@
 					grid-column: 5/6;
 					grid-row: 9/10;
 				}
+				@media #{$rwd700} {
+					grid-column: 1/2;
+					grid-row: 10/11;
+				}
 				&:after {
 					background-color: $blueCol;
 				}
@@ -815,6 +996,10 @@
 					grid-column: 6/7;
 					grid-row: 9/10;
 				}
+				@media #{$rwd700} {
+					grid-column: 2/3;
+					grid-row: 10/11;
+				}
 				&:after {
 					background-color: $blueCol;
 				}
@@ -824,6 +1009,10 @@
 				grid-row: 3/4;
 				@media #{$rwd1100} {
 					grid-column: 5/6;
+					grid-row: 10/11;
+				}
+				@media #{$rwd700} {
+					grid-column: 3/4;
 					grid-row: 10/11;
 				}
 				&:after {
@@ -878,11 +1067,19 @@
 		z-index: 1000;
 		background-color: #313131;
 		@include flexCenter();
+		@media #{$rwd700} {
+			width: 95vw;
+			margin: 0 2.5vw;
+		}
 		> address {
 			color: #fff;
 			height: 20px;
 			line-height: 20px;
 			font-size: 0.7rem;
+			@media #{$rwd700} {
+				color: #313131;
+				font-size: .1rem;
+			}
 			> a {
 				display: inline-block;
 				padding: 0 16px;
@@ -899,6 +1096,53 @@
 	// end of footer
 }
 // end of #wrap
+.details {
+	display: none;
+	position: absolute;
+	top: calc(4vw + 2vh);
+	left: 20vw;
+	width: 60vw;
+	height: calc(93vh - 6vw);
+	background-color: #fff;
+	z-index: 10000;
+	box-shadow: 0 0 0 1000px rgba($color: #000000, $alpha: 0.7);
+	@media #{$rwd1100} {
+		width: 100vw;
+		left: 0;
+	}
+	> .frame {
+		width: 100%;
+		height: 100%;
+		margin: 0 auto;
+		overflow: auto;
+		> img {
+			display: block;
+			width: 100%;
+			height: auto;
+			transform: translate3d(0, 0, 0);
+		}
+	}
+	> button {
+		@include btnReset();
+		@include irSet();
+		position: absolute;
+		right: 1.5rem;
+		top: 1.5rem;
+		width: 2vw;
+		height: 2vw;
+		background-image: url(../img/profile_details_cls.svg);
+		@media #{$rwd1100} {
+			width: 4vw;
+			height: 4vw;
+		}
+		@media #{$rwd700} {
+			width: 8vw;
+			height: 8vw;
+			right: 1rem;
+			top: 1rem;
+		}
+	}
+}
 body {
 	overflow-x: hidden;
 }

@@ -86,4 +86,17 @@
 			animation: shadow 1s forwards 4s;
 		} //end of #shadow
 	} //end of svg
+	> a {
+		display: block;
+		position: absolute;
+		width: 5rem;
+		bottom: 10%;
+		left: calc(50% - 2.5rem);
+		font-size: 1.2rem;
+		text-align: center;
+		text-decoration: underline;
+		@media #{$rwd700} {
+			font-size: 0.9rem;
+		}
+	}
 }
