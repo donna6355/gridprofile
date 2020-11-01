@@ -12,11 +12,13 @@
 		position: sticky;
 		left: 0;
 		top: 0;
+		z-index: 1000;
 		width: 100%;
 		height: calc(4vw + 2vh);
 		@include flex();
 		justify-content: space-between;
 		align-items: center;
+		background-color: #fff;
 		> h1.logo {
 			width: 15vw;
 			height: 4vw;
@@ -39,6 +41,15 @@
 			font-size: 1.2rem;
 			font-weight: 800;
 			margin: 0 1vw;
+			@media screen and (max-width: 1280px) {
+				font-size: 1rem;
+			}
+			@media #{$rwd1100} {
+				font-size: 0.8rem;
+				position: absolute;
+				top: 4px;
+				right: -8px;
+			}
 			> span {
 				position: relative;
 				font-weight: 900;
@@ -55,6 +66,9 @@
 		}
 		// end of h2
 		> nav {
+			@media #{$rwd1100} {
+				align-self: flex-end;
+			}
 			> ol {
 				float: right;
 				> li {
@@ -70,6 +84,9 @@
 						font-size: 1.6rem;
 						line-height: 1.6rem;
 						color: #313131;
+						@media screen and (max-width: 1280px) {
+							font-size: 1.4rem;
+						}
 					}
 					&:last-child {
 						margin-right: 0;
@@ -97,6 +114,9 @@
 						color: #777;
 						font-weight: 700;
 						font-size: 1.6rem;
+						@media screen and (max-width: 1280px) {
+							font-size: 1.4rem;
+						}
 					}
 				}
 			}
@@ -109,6 +129,10 @@
 		background-image: url(../img/profile_main_bb1.png);
 		background-repeat: no-repeat;
 		background-position: 65% 90%;
+		margin: 0 0 6vh;
+		@media #{$rwd1100} {
+			background-position: left bottom;
+		}
 		> .grid-container {
 			display: grid;
 			height: calc(93vh - 6vw);
@@ -116,15 +140,28 @@
 			grid-template-columns: repeat(12, 1fr);
 			grid-template-rows: repeat(6, 1fr);
 			grid-gap: 1.5vw;
+			@media #{$rwd1100} {
+				height: 160vh;
+				grid-template-columns: repeat(6, 1fr);
+				grid-template-rows: repeat(13, 1fr);
+			}
 			> button {
 				position: relative;
 				@include btnReset();
 				z-index: 1;
 				overflow: hidden;
-				background-color: #a7b6c0;
 				font-weight: 700;
 				color: #fff;
 				transition: all 0.6s;
+				&.whatdo {
+					background-color: rgba($skyCol, $alpha: 0.6);
+				}
+				&.whatdone {
+					background-color: rgba($purpleCol, $alpha: 0.6);
+				}
+				&.who {
+					background-color: rgba($blueCol, $alpha: 0.6);
+				}
 				&:after {
 					display: block;
 					position: absolute;
@@ -160,12 +197,16 @@
 				overflow: hidden;
 				box-sizing: border-box;
 				outline: 0px solid $skyCol;
-				// box-sizing: border-box;
+				@media #{$rwd1100} {
+					grid-column: 1/7;
+					grid-row: 1/7;
+				}
 				> ul {
 					position: relative;
 					overflow: hidden;
 					height: 100%;
 					> li {
+						overflow-x: hidden;
 						position: absolute;
 						top: 0;
 						left: 120%;
@@ -206,6 +247,9 @@
 							margin: 1.5vh auto;
 							text-align: center;
 							@include irSet();
+							@media #{$rwd1100} {
+								margin: 2vh auto;
+							}
 						}
 						&:nth-child(2) > h2 {
 							background-image: url(../img/profile_whatdo_thumb1.png);
@@ -227,7 +271,10 @@
 						}
 						> h3 {
 							font-size: 1.2rem;
-							margin: 1vh 0;
+							margin: 0.5vh 0;
+							@media #{$rwd1100} {
+								margin: 1vh 0;
+							}
 						}
 						> h4 {
 							margin: 0.5vh 0;
@@ -237,14 +284,23 @@
 						> p {
 							color: #000;
 							font-size: 0.9rem;
-							line-height: 1.5rem;
+							line-height: 1.3rem;
 						}
 						> img {
 							display: block;
+							width: 100%;
+							max-width: 532px;
 							margin: 1vh auto;
+							image-rendering: pixelated;
+							@media #{$rwd1100} {
+								margin: 4vh auto;
+							}
 						}
 						.btn {
 							margin: 1vh auto;
+							@media #{$rwd1100} {
+								margin: 1.5vh 0;
+							}
 							> a {
 								display: inline-block;
 								margin: 0 0.2vw;
@@ -269,7 +325,11 @@
 			> article.who {
 				grid-column: 8/12;
 				grid-row: 1/4;
-				outline: 0px solid $blueCol; // box-sizing: border-box;
+				outline: 0px solid $blueCol;
+				@media #{$rwd1100} {
+					grid-column: 1/5;
+					grid-row: 8/11;
+				}
 				> ul {
 					overflow: hidden;
 					position: relative;
@@ -313,6 +373,7 @@
 								display: flex;
 								justify-content: space-around;
 								width: 100%;
+								height: 30%;
 								> p {
 									width: 80px;
 									height: 80px;
@@ -454,7 +515,11 @@
 			> article.done {
 				grid-column: 10/13;
 				grid-row: 4/7;
-				outline: 0px solid $purpleCol; // box-sizing: border-box;
+				outline: 0px solid $purpleCol;
+				@media #{$rwd1100} {
+					grid-column: 4/7;
+					grid-row: 11/14;
+				}
 				> ul {
 					position: relative;
 					width: 100%;
@@ -530,6 +595,10 @@
 								bottom: 1vh;
 								z-index: 10;
 								width: 5vw;
+								@media #{$rwd1100} {
+									left: calc(50% - 6vw);
+									width: 12vw;
+								}
 								> li {
 									float: left;
 									width: 0.6vw;
@@ -538,6 +607,11 @@
 									border-radius: 50%;
 									@include irSet();
 									background: #999;
+									@media #{$rwd1100} {
+										width: 1.5vw;
+										height: 1.5vw;
+										margin-right: 1.3vw;
+									}
 									&:last-child {
 										margin-right: 0;
 									}
@@ -629,39 +703,74 @@
 			.item1 {
 				grid-column: 7/8;
 				grid-row: 1/2;
+				@media #{$rwd1100} {
+					grid-column: 1/2;
+					grid-row: 7/8;
+				}
 			}
 			.item2 {
 				grid-column: 7/8;
 				grid-row: 2/3;
+				@media #{$rwd1100} {
+					grid-column: 2/3;
+					grid-row: 7/8;
+				}
 			}
 			.item3 {
 				grid-column: 7/8;
 				grid-row: 3/4;
+				@media #{$rwd1100} {
+					grid-column: 3/4;
+					grid-row: 7/8;
+				}
 			}
 			.item4 {
 				grid-column: 7/8;
 				grid-row: 4/5;
+				@media #{$rwd1100} {
+					grid-column: 4/5;
+					grid-row: 7/8;
+				}
 			}
 			.item5 {
 				grid-column: 7/8;
 				grid-row: 5/6;
+				@media #{$rwd1100} {
+					grid-column: 5/6;
+					grid-row: 7/8;
+				}
 			}
 			.item6 {
 				grid-column: 7/8;
 				grid-row: 6/7;
+				@media #{$rwd1100} {
+					grid-column: 6/7;
+					grid-row: 7/8;
+				}
 			}
 			.item7 {
 				grid-column: 8/9;
 				grid-row: 4/5;
+				@media #{$rwd1100} {
+					grid-column: 5/6;
+					grid-row: 8/9;
+				}
 			}
 			.item8 {
 				grid-column: 8/9;
 				grid-row: 6/7;
+				@media #{$rwd1100} {
+					grid-column: 6/7;
+					grid-row: 8/9;
+				}
 			}
 			.item9 {
 				grid-column: 9/10;
 				grid-row: 4/5;
-				background-color: #5e5165;
+				@media #{$rwd1100} {
+					grid-column: 2/3;
+					grid-row: 11/12;
+				}
 				&:after {
 					background-color: $purpleCol;
 				}
@@ -669,7 +778,10 @@
 			.item10 {
 				grid-column: 9/10;
 				grid-row: 5/6;
-				background-color: #5e5165;
+				@media #{$rwd1100} {
+					grid-column: 3/4;
+					grid-row: 11/12;
+				}
 				&:after {
 					background-color: $purpleCol;
 				}
@@ -677,7 +789,10 @@
 			.item11 {
 				grid-column: 9/10;
 				grid-row: 6/7;
-				background-color: #5e5165;
+				@media #{$rwd1100} {
+					grid-column: 3/4;
+					grid-row: 12/13;
+				}
 				&:after {
 					background-color: $purpleCol;
 				}
@@ -685,7 +800,10 @@
 			.item12 {
 				grid-column: 12/13;
 				grid-row: 1/2;
-				background-color: #3c465d;
+				@media #{$rwd1100} {
+					grid-column: 5/6;
+					grid-row: 9/10;
+				}
 				&:after {
 					background-color: $blueCol;
 				}
@@ -693,7 +811,10 @@
 			.item13 {
 				grid-column: 12/13;
 				grid-row: 2/3;
-				background-color: #3c465d;
+				@media #{$rwd1100} {
+					grid-column: 6/7;
+					grid-row: 9/10;
+				}
 				&:after {
 					background-color: $blueCol;
 				}
@@ -701,7 +822,10 @@
 			.item14 {
 				grid-column: 12/13;
 				grid-row: 3/4;
-				background-color: #3c465d;
+				@media #{$rwd1100} {
+					grid-column: 5/6;
+					grid-row: 10/11;
+				}
 				&:after {
 					background-color: $blueCol;
 				}
@@ -751,6 +875,7 @@
 		width: 90vw;
 		margin: 0 5vw;
 		height: 5vh;
+		z-index: 1000;
 		background-color: #313131;
 		@include flexCenter();
 		> address {
@@ -774,3 +899,6 @@
 	// end of footer
 }
 // end of #wrap
+body {
+	overflow-x: hidden;
+}

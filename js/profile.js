@@ -22,12 +22,13 @@ $(function(){
   // function
   const careerSlide = function(){
     $('.done .main').stop().animate({left:`${careerIdx * -100}%`})
-    $('.done .pagination > li').eq(careerIdx).addClass('on').siblings().removeClass('on');
+    $('.done .pagination > li').eq(careerIdx).addClass('on')
+                                .siblings().removeClass('on');
   }
   const btnEvent = function(gnbEq, className, liIdx){
     $gnb.eq(gnbEq).trigger('click');
     setTimeout(function(){
-      $('article>ul>li.on').removeClass('on').addClass('off');
+      $article.find('.on').removeClass('on').addClass('off');
       $(`article.${className}>ul>li`).eq(liIdx).removeClass('off').addClass('on');
       $('.who > ul > li svg').removeClass('on');
     },500)
@@ -59,14 +60,21 @@ $(function(){
   },300)
  
 
-  // gnb event
+  // gnb event + scroll event
   $gnb.on('click',function(evt){
     const idx = $gnb.index(this);
+    const scroll = $article.eq(idx).offset().top -100;
+
     evt.preventDefault();
     $(this).parent().addClass('on').siblings().removeClass('on');
-    $article.eq(idx).removeClass('off').addClass('on').siblings('article').addClass('off').removeClass('on');
+
+    $article.eq(idx).removeClass('off').addClass('on')
+            .siblings('article').addClass('off').removeClass('on');
     $button.removeClass('on');
     $('article>ul>li.on').removeClass('on').addClass('off');
+
+    $('html, body').stop().animate({scrollTop:scroll});
+
   })
   // button click event
   // trigger the gnb event and show li with additional animation
