@@ -148,9 +148,8 @@
 			background-position: left bottom;
 		}
 		@media #{$rwd700} {
-			background-image: url(../img/profile_main_bb1.png)
-				url(../img/profile_bg_bottom.png);
-			background-position: 58vw 120vh;
+			background-image: url(../img/profile_main_bb1.png);
+			background-position: 58vw 800px;
 		}
 		> .grid-container {
 			display: grid;
@@ -160,12 +159,12 @@
 			grid-template-rows: repeat(6, 1fr);
 			grid-gap: 1.5vw;
 			@media #{$rwd1100} {
-				height: 160vh;
+				height: 1420px;
 				grid-template-columns: repeat(6, 1fr);
 				grid-template-rows: repeat(13, 1fr);
 			}
 			@media #{$rwd700} {
-				height: 200vh;
+				height: 1280px;
 				grid-template-columns: repeat(4, 1fr);
 				grid-template-rows: repeat(14, 1fr);
 				grid-gap: 1.5vh;
@@ -211,9 +210,11 @@
 				}
 			}
 			> article.on {
+				overflow: hidden;
 				animation: frame 1s linear alternate infinite;
 			}
 			> article.off {
+				overflow: hidden;
 				animation: off 1s linear forwards;
 			}
 			> article.do {
@@ -271,10 +272,10 @@
 									line-height: 1.6rem;
 								}
 								&:last-child {
-									margin-top: 14vh;
+									margin-top: 32px;
 									font-size: 0.8rem;
 									@media #{$rwd700} {
-										margin-top: 8vh;
+										margin-top: 24px;
 									}
 								}
 							}
@@ -289,13 +290,13 @@
 							text-align: center;
 							@include irSet();
 							@media #{$rwd1100} {
-								margin: 1.5vw auto;
+								margin: 1vw auto;
 							}
 							@media #{$rwd700} {
 								width: 40%;
 								background-size: contain;
 								height: 10%;
-								margin: 0.5vh auto;
+								margin: 0.2vh auto;
 							}
 						}
 						&:nth-child(2) > h2 {
@@ -326,11 +327,11 @@
 							font-size: 1.2rem;
 							margin: 2vh 0;
 							@media #{$rwd1100} {
-								margin: 2vw 0;
+								margin: 1vw 0;
 							}
 							@media #{$rwd700} {
 								font-size: 1rem;
-								margin: 0.2vh 0;
+								margin: 0.3vh 0;
 							}
 						}
 						> h4 {
@@ -338,7 +339,7 @@
 							color: #000;
 							font-size: 1rem;
 							@media #{$rwd700} {
-								margin: .5vh 0;
+								margin: .2vh 0;
 								font-size: .9rem;
 							}
 						}
@@ -358,11 +359,11 @@
 							margin: 1vh auto;
 							image-rendering: pixelated;
 							@media #{$rwd1100} {
-								margin: 4vw auto;
+								margin: 2vw auto;
 							}
 							@media #{$rwd700} {
 								width: 80%;
-								margin: 0.5vh auto;
+								margin: 0.2vh auto;
 							}
 						}
 						.btn {
@@ -448,7 +449,7 @@
 									line-height: 1.6rem;
 								}
 								&:last-child {
-									margin-top: 4vh;
+									margin-top: 2rem;
 									font-size: 0.8rem;
 								}
 							}
@@ -611,7 +612,8 @@
 					&:after {
 						position: absolute;
 						right: 0;
-						bottom: 37vh;
+						bottom: 23%;
+						z-index: -10;
 						display: block;
 						content: "";
 						width: 13vw;
@@ -627,7 +629,8 @@
 					&:after {
 						position: absolute;
 						left: 0;
-						bottom: 0;
+						top: 1230px;
+						z-index: -10;
 						display: block;
 						content: "";
 						width: 233px;
@@ -677,7 +680,7 @@
 									line-height: 1.6rem;
 								}
 								&:last-child {
-									margin-top: 4vh;
+									margin-top: 2rem;
 									font-size: 0.8rem;
 								}
 							}
@@ -793,8 +796,17 @@
 								margin: 3vh 0;
 								text-align: center;
 							}
-							> iframe {
-								width: 100%;
+							> .videoframe {
+								display: block;
+								width: 90%;
+								margin: 0 auto;
+								&:hover {
+									outline: 2px solid $purpleCol;
+								}
+								> img {
+									display: block;
+									width: 100%;
+								}
 							}
 						}
 						// end of 3rd child // eng dubbing

@@ -72,10 +72,10 @@
 @media screen and (max-width: 1280px) { #wrap > header > nav > ol > li > a { font-size: 1.4rem; } }
 #wrap > section { width: 100%; background-image: url(../img/profile_main_bb1.png); background-repeat: no-repeat; background-position: 65% 90%; margin: 0 0 6vh; }
 @media screen and (max-width: 1100px) { #wrap > section { background-position: left bottom; } }
-@media screen and (max-width: 700px) { #wrap > section { background-image: url(../img/profile_main_bb1.png) url(../img/profile_bg_bottom.png); background-position: 58vw 120vh; } }
+@media screen and (max-width: 700px) { #wrap > section { background-image: url(../img/profile_main_bb1.png); background-position: 58vw 800px; } }
 #wrap > section > .grid-container { display: grid; height: calc(93vh - 6vw); margin: 1vw 0; grid-template-columns: repeat(12, 1fr); grid-template-rows: repeat(6, 1fr); grid-gap: 1.5vw; }
-@media screen and (max-width: 1100px) { #wrap > section > .grid-container { height: 160vh; grid-template-columns: repeat(6, 1fr); grid-template-rows: repeat(13, 1fr); } }
-@media screen and (max-width: 700px) { #wrap > section > .grid-container { height: 200vh; grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(14, 1fr); grid-gap: 1.5vh; } }
+@media screen and (max-width: 1100px) { #wrap > section > .grid-container { height: 1420px; grid-template-columns: repeat(6, 1fr); grid-template-rows: repeat(13, 1fr); } }
+@media screen and (max-width: 700px) { #wrap > section > .grid-container { height: 1280px; grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(14, 1fr); grid-gap: 1.5vh; } }
 #wrap > section > .grid-container > button { position: relative; outline: none; border: none; background: none; z-index: 1; overflow: hidden; font-weight: 700; color: #fff; transition: all 0.6s; }
 #wrap > section > .grid-container > button.whatdo { background-color: rgba(108, 171, 213, 0.6); }
 #wrap > section > .grid-container > button.whatdone { background-color: rgba(113, 72, 138, 0.6); }
@@ -83,8 +83,8 @@
 #wrap > section > .grid-container > button:after { display: block; position: absolute; left: 0; top: 0; z-index: -1; width: 100%; height: 100%; border-radius: 50%; background-color: #6cabd5; transform: scale(0); content: ""; transition: all 0.4s; }
 #wrap > section > .grid-container > button.on, #wrap > section > .grid-container > button:hover, #wrap > section > .grid-container > button:focus { border-radius: 50%; }
 #wrap > section > .grid-container > button.on:after, #wrap > section > .grid-container > button:hover:after, #wrap > section > .grid-container > button:focus:after { transform: scale(2); }
-#wrap > section > .grid-container > article.on { animation: frame 1s linear alternate infinite; }
-#wrap > section > .grid-container > article.off { animation: off 1s linear forwards; }
+#wrap > section > .grid-container > article.on { overflow: hidden; animation: frame 1s linear alternate infinite; }
+#wrap > section > .grid-container > article.off { overflow: hidden; animation: off 1s linear forwards; }
 #wrap > section > .grid-container > article.do { grid-column: 1/7; grid-row: 1/7; overflow: hidden; box-sizing: border-box; outline: 0px solid #6cabd5; }
 @media screen and (max-width: 1100px) { #wrap > section > .grid-container > article.do { grid-column: 1/7; grid-row: 1/7; } }
 @media screen and (max-width: 700px) { #wrap > section > .grid-container > article.do { grid-column: 1/5; grid-row: 1/5; } }
@@ -95,12 +95,12 @@
 @media screen and (max-width: 700px) { #wrap > section > .grid-container > article.do > ul > li.tit > h2 { height: 20vh; font-size: 1.6rem; line-height: 20vh; } }
 #wrap > section > .grid-container > article.do > ul > li.tit > p { color: #fff; font-weight: 800; font-size: 1.4rem; line-height: 2rem; filter: blur(18px); }
 @media screen and (max-width: 700px) { #wrap > section > .grid-container > article.do > ul > li.tit > p { font-size: 1rem; line-height: 1.6rem; } }
-#wrap > section > .grid-container > article.do > ul > li.tit > p:last-child { margin-top: 14vh; font-size: 0.8rem; }
-@media screen and (max-width: 700px) { #wrap > section > .grid-container > article.do > ul > li.tit > p:last-child { margin-top: 8vh; } }
+#wrap > section > .grid-container > article.do > ul > li.tit > p:last-child { margin-top: 32px; font-size: 0.8rem; }
+@media screen and (max-width: 700px) { #wrap > section > .grid-container > article.do > ul > li.tit > p:last-child { margin-top: 24px; } }
 #wrap > section > .grid-container > article.do > ul > li:nth-child(2n) { left: -120%; }
 #wrap > section > .grid-container > article.do > ul > li > h2 { width: 172px; height: 40px; margin: 2.5vh auto; text-align: center; text-indent: -9999px; background-repeat: no-repeat; background-position: center; }
-@media screen and (max-width: 1100px) { #wrap > section > .grid-container > article.do > ul > li > h2 { margin: 1.5vw auto; } }
-@media screen and (max-width: 700px) { #wrap > section > .grid-container > article.do > ul > li > h2 { width: 40%; background-size: contain; height: 10%; margin: 0.5vh auto; } }
+@media screen and (max-width: 1100px) { #wrap > section > .grid-container > article.do > ul > li > h2 { margin: 1vw auto; } }
+@media screen and (max-width: 700px) { #wrap > section > .grid-container > article.do > ul > li > h2 { width: 40%; background-size: contain; height: 10%; margin: 0.2vh auto; } }
 #wrap > section > .grid-container > article.do > ul > li:nth-child(2) > h2 { background-image: url(../img/profile_whatdo_thumb1.png); }
 #wrap > section > .grid-container > article.do > ul > li:nth-child(3) > h2 { background-image: url(../img/profile_whatdo_thumb2.png); }
 #wrap > section > .grid-container > article.do > ul > li:nth-child(4) > h2 { background-image: url(../img/profile_whatdo_thumb3.png); }
@@ -110,15 +110,15 @@
 #wrap > section > .grid-container > article.do > ul > li:nth-child(8) > h2 { background-image: url(../img/profile_whatdo_thumb8.png); }
 #wrap > section > .grid-container > article.do > ul > li:nth-child(9) > h2 { background-image: url(../img/profile_whatdo_thumb4.png); }
 #wrap > section > .grid-container > article.do > ul > li > h3 { font-size: 1.2rem; margin: 2vh 0; }
-@media screen and (max-width: 1100px) { #wrap > section > .grid-container > article.do > ul > li > h3 { margin: 2vw 0; } }
-@media screen and (max-width: 700px) { #wrap > section > .grid-container > article.do > ul > li > h3 { font-size: 1rem; margin: 0.2vh 0; } }
+@media screen and (max-width: 1100px) { #wrap > section > .grid-container > article.do > ul > li > h3 { margin: 1vw 0; } }
+@media screen and (max-width: 700px) { #wrap > section > .grid-container > article.do > ul > li > h3 { font-size: 1rem; margin: 0.3vh 0; } }
 #wrap > section > .grid-container > article.do > ul > li > h4 { margin: 1vh 0; color: #000; font-size: 1rem; }
-@media screen and (max-width: 700px) { #wrap > section > .grid-container > article.do > ul > li > h4 { margin: .5vh 0; font-size: .9rem; } }
+@media screen and (max-width: 700px) { #wrap > section > .grid-container > article.do > ul > li > h4 { margin: .2vh 0; font-size: .9rem; } }
 #wrap > section > .grid-container > article.do > ul > li > p { color: #000; font-size: 0.9rem; line-height: 1.3rem; }
 @media screen and (max-width: 700px) { #wrap > section > .grid-container > article.do > ul > li > p { font-size: .8rem; line-height: 1rem; } }
 #wrap > section > .grid-container > article.do > ul > li > img { display: block; width: 100%; max-width: 532px; margin: 1vh auto; image-rendering: pixelated; }
-@media screen and (max-width: 1100px) { #wrap > section > .grid-container > article.do > ul > li > img { margin: 4vw auto; } }
-@media screen and (max-width: 700px) { #wrap > section > .grid-container > article.do > ul > li > img { width: 80%; margin: 0.5vh auto; } }
+@media screen and (max-width: 1100px) { #wrap > section > .grid-container > article.do > ul > li > img { margin: 2vw auto; } }
+@media screen and (max-width: 700px) { #wrap > section > .grid-container > article.do > ul > li > img { width: 80%; margin: 0.2vh auto; } }
 #wrap > section > .grid-container > article.do > ul > li .btn { margin: 1vh auto; }
 @media screen and (max-width: 1100px) { #wrap > section > .grid-container > article.do > ul > li .btn { margin: 2vw 0; } }
 #wrap > section > .grid-container > article.do > ul > li .btn > a { display: inline-block; margin: 0 0.2vw; width: 100px; height: 40px; color: #fff; font-size: 1rem; font-weight: 700; line-height: 40px; background-color: #6cabd5; border-radius: 20px; }
@@ -134,7 +134,7 @@
 @media screen and (max-width: 700px) { #wrap > section > .grid-container > article.who > ul > li.tit > h2 { font-size: 1.6rem; } }
 #wrap > section > .grid-container > article.who > ul > li.tit > p { color: #fff; font-weight: 800; font-size: 1.2rem; line-height: 2rem; filter: blur(18px); }
 @media screen and (max-width: 700px) { #wrap > section > .grid-container > article.who > ul > li.tit > p { font-size: 1rem; line-height: 1.6rem; } }
-#wrap > section > .grid-container > article.who > ul > li.tit > p:last-child { margin-top: 4vh; font-size: 0.8rem; }
+#wrap > section > .grid-container > article.who > ul > li.tit > p:last-child { margin-top: 2rem; font-size: 0.8rem; }
 #wrap > section > .grid-container > article.who > ul > li:nth-child(2) div { display: flex; justify-content: space-around; width: 100%; height: 30%; }
 #wrap > section > .grid-container > article.who > ul > li:nth-child(2) div > p { width: 80px; height: 80px; margin-top: -0.5vh; position: relative; }
 #wrap > section > .grid-container > article.who > ul > li:nth-child(2) div > p > span { position: absolute; left: 0; top: 0; display: block; width: 90%; height: 90%; padding: 5%; text-indent: -9999px; background-repeat: no-repeat; background-position: center; }
@@ -169,9 +169,9 @@
 #wrap > section > .grid-container > article.who > ul > li:nth-child(2n) { top: -150%; }
 #wrap > section > .grid-container > article.done { grid-column: 10/13; grid-row: 4/7; outline: 0px solid #71488a; }
 @media screen and (max-width: 1100px) { #wrap > section > .grid-container > article.done { grid-column: 4/7; grid-row: 11/14; }
-  #wrap > section > .grid-container > article.done:after { position: absolute; right: 0; bottom: 37vh; display: block; content: ""; width: 13vw; height: 8vw; text-indent: -9999px; background-repeat: no-repeat; background-position: center; background-image: url(../img/profile_bg_side.png); background-size: contain; } }
+  #wrap > section > .grid-container > article.done:after { position: absolute; right: 0; bottom: 23%; z-index: -10; display: block; content: ""; width: 13vw; height: 8vw; text-indent: -9999px; background-repeat: no-repeat; background-position: center; background-image: url(../img/profile_bg_side.png); background-size: contain; } }
 @media screen and (max-width: 700px) { #wrap > section > .grid-container > article.done { grid-column: 1/4; grid-row: 11/14; }
-  #wrap > section > .grid-container > article.done:after { position: absolute; left: 0; bottom: 0; display: block; content: ""; width: 233px; height: 84px; text-indent: -9999px; background-repeat: no-repeat; background-position: center; background-image: url(../img/profile_bg_bottom.png); } }
+  #wrap > section > .grid-container > article.done:after { position: absolute; left: 0; top: 1230px; z-index: -10; display: block; content: ""; width: 233px; height: 84px; text-indent: -9999px; background-repeat: no-repeat; background-position: center; background-image: url(../img/profile_bg_bottom.png); } }
 #wrap > section > .grid-container > article.done > ul { position: relative; width: 100%; height: 100%; }
 #wrap > section > .grid-container > article.done > ul > li { position: absolute; width: 100%; height: 100%; left: 0; top: 0; background-color: #fff; transform: scale(0); padding: 2vh 1vw; box-sizing: border-box; }
 #wrap > section > .grid-container > article.done > ul > li.tit { display: block; background-color: #71488a; filter: grayscale(70%); text-align: center; }
@@ -179,7 +179,7 @@
 @media screen and (max-width: 700px) { #wrap > section > .grid-container > article.done > ul > li.tit > h2 { font-size: 1.4rem; } }
 #wrap > section > .grid-container > article.done > ul > li.tit > p { color: #fff; font-weight: 800; font-size: 1.2rem; line-height: 2rem; filter: blur(18px); }
 @media screen and (max-width: 700px) { #wrap > section > .grid-container > article.done > ul > li.tit > p { font-size: 1rem; line-height: 1.6rem; } }
-#wrap > section > .grid-container > article.done > ul > li.tit > p:last-child { margin-top: 4vh; font-size: 0.8rem; }
+#wrap > section > .grid-container > article.done > ul > li.tit > p:last-child { margin-top: 2rem; font-size: 0.8rem; }
 #wrap > section > .grid-container > article.done > ul > li:nth-child(2) { position: relative; overflow: hidden; }
 @media screen and (max-width: 700px) { #wrap > section > .grid-container > article.done > ul > li:nth-child(2) > h2 { font-size: .9rem; } }
 #wrap > section > .grid-container > article.done > ul > li:nth-child(2) > ol { position: absolute; }
@@ -203,7 +203,9 @@
 #wrap > section > .grid-container > article.done > ul > li:nth-child(2) > .btn > a.prev { border-left-color: transparent; border-top-color: transparent; border-bottom-color: transparent; }
 @media screen and (max-width: 700px) { #wrap > section > .grid-container > article.done > ul > li:nth-child(3) > h2 { font-size: .9rem; } }
 #wrap > section > .grid-container > article.done > ul > li:nth-child(3) > h3 { margin: 3vh 0; text-align: center; }
-#wrap > section > .grid-container > article.done > ul > li:nth-child(3) > iframe { width: 100%; }
+#wrap > section > .grid-container > article.done > ul > li:nth-child(3) > .videoframe { display: block; width: 90%; margin: 0 auto; }
+#wrap > section > .grid-container > article.done > ul > li:nth-child(3) > .videoframe:hover { outline: 2px solid #71488a; }
+#wrap > section > .grid-container > article.done > ul > li:nth-child(3) > .videoframe > img { display: block; width: 100%; }
 #wrap > section > .grid-container > article.done > ul > li:nth-child(4) > .frame { height: 100%; }
 #wrap > section > .grid-container > article.done > ul > li:nth-child(4) > .frame > ol { position: relative; width: 100%; height: 100%; background-image: url(../img/profile_whatdone_trav1.png); background-repeat: no-repeat; background-size: cover; background-position: center; animation: photo 3s infinite linear; }
 #wrap > section > .grid-container > article.done > ul > li:nth-child(4) > .frame > ol > li { display: none; }
