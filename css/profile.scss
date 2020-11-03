@@ -286,7 +286,7 @@
 						> h2 {
 							width: 172px;
 							height: 40px;
-							margin: 2.5vh auto;
+							margin: 1vh auto;
 							text-align: center;
 							@include irSet();
 							@media #{$rwd1100} {
@@ -325,7 +325,7 @@
 						}
 						> h3 {
 							font-size: 1.2rem;
-							margin: 2vh 0;
+							margin: 1vh 0;
 							@media #{$rwd1100} {
 								margin: 1vw 0;
 							}
@@ -356,7 +356,7 @@
 							display: block;
 							width: 100%;
 							max-width: 532px;
-							margin: 1vh auto;
+							margin: 0 auto;
 							image-rendering: pixelated;
 							@media #{$rwd1100} {
 								margin: 2vw auto;
