@@ -1,12 +1,23 @@
 // get the length of svg logo
+// $(function(){
+// // get the path length of svg logo
+// const $signature = $('#fullSig>path');
+// for(let i = 0; i<$signature.length;i++){
+//   console.log(`${i}/${$signature[i].id}'s path length = ${$signature[i].getTotalLength()}`);
+// }
+// $('article>ul>li').addClass('off');
+// })
+
+// alert for IE
 $(function(){
-// get the path length of svg logo
-const $signature = $('#fullSig>path');
-for(let i = 0; i<$signature.length;i++){
-  console.log(`${i}/${$signature[i].id}'s path length = ${$signature[i].getTotalLength()}`);
-}
-$('article>ul>li').addClass('off');
-})
+  const browser = (navigator.userAgent).toLowerCase();
+  console.dir(navigator.userAgent)
+  if(browser.includes('msie')){
+    alert(`이 사이트는 인터넷 익스플로러를 지원하지 않습니다. `)
+  }
+
+});
+
 
 // animation for full page
 $(function(){
